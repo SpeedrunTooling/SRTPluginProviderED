@@ -215,6 +215,63 @@ namespace SRTPluginProviderED.Structs.GameStructs
 
             // Elden Throne
             {"Radagon of the Golden Order / Elden Beast", 0x15C331},
+
+            //DLC
+
+            //{"Gravesite Plain", 0x16459},
+            {"Knight of the Solitary Gaol", 0x16459},
+            {"Chief Bloodfiend", 0xA0},
+            {"Demi Human Swordsman Onze", 0x9F},
+            {"Divine Beast Dancing Lion", 0x8E},
+            {"Ghostflame Dragon", 0x2DD4},
+            {"Lamenter", 0x9F},
+            {"Renalla Twin Moon Knight Boss", 0x47C},
+            {"Red Bear", 0x2DD9},
+            {"Cerulean Coast", 0x15A18},
+            {"Dancer of Ranah", 0x15A18},
+            {"Ghostflame Dragon Ruins", 0x25431},
+            {"Putrescent Knight", 0x8F},
+
+            //{"Abyssal Woods", 0x91},
+            {"Jori, Elder Inquisitor", 0x91},
+            {"Midra Lord of Frenzied Flame", 0x90},
+
+            //{"Finger Ruins of Rhia", 0x2DD3},
+            {"Jagged Peak Drake", 0x2DD3},
+
+            //{"Scadu Altus", 0x2DE1},
+            {"Black Knight Edredd", 0x2DE1},
+            {"Black Knight Garrew", 0x2DE0},
+            {"Commander Gaius", 0x91},
+            {"Curseblade Labirith", 0x9F},
+            {"Death Knight (Fog Rift Catacombs)", 0x9E},
+            {"Dryleaf Dane", 0xFA},
+            {"Golden Hippopotamus", 0x477},
+            {"Messmer the Impaler", 0x477},
+            {"Metyr, Mother of Fingers", 0x478},
+            {"Rakshasa", 0x2DD0},
+            {"Ralva the Great Red Bear", 0x2DDD},
+            {"Tree Sentinel ", 0x2DDF},
+
+            //{"Charo's Hidden Grave", 0x2DD2},
+            {"Demi-Human Queen Marigga", 0x2DD2},
+
+            //{"Scaduview", 0x2DE1},
+            {"Fallingstar Beast", 0x2DE1},
+            {"Scadutree Avatar", 0x91},
+
+            //{"Rauh Base", 0x91},
+            {"Romina, Saint of the Bud", 0x91},
+            {"Death Knight (Scorpion River Catacombs)", 0x9E},
+
+            //{"Jagged Peak", 0xA0},
+            {"Ancient Dragon-Man", 0xA0},
+            {"Ancient Dragon Senessax", 0x2DCD},
+            {"Bayle the Dread", 0x91},
+            {"The Jagged Peak Drake", 0x489},
+
+            //{"Enir Ilim", 0x8E},
+            {"Promised Consort Radahn / Radahn, Consort of Miquella", 0x8E},
         };
     }
 }

@@ -4,14 +4,6 @@ using System.Security.Cryptography;
 
 namespace SRTPluginProviderED
 {
-    /// <summary>
-    /// SHA256 hashes for the RE3/BIO3 REmake game executables.
-    /// 
-    /// Resident Evil 3 (WW): https://steamdb.info/app/952060/ / https://steamdb.info/depot/952062/
-    /// Biohazard 3 (CERO Z): https://steamdb.info/app/1100830/ / https://steamdb.info/depot/1100831/
-    /// </summary>
-    /// 
-
     public enum GameVersion : int
     {
         STEAM_July2024,

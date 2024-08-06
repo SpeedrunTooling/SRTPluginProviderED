@@ -91,22 +91,12 @@ namespace SRTPluginProviderED
         {
             if (gv == GameVersion.STEAM_July2024)
             {
-                //gameMemoryValues._bellBearingHunter = PointerBossStatus.DerefByte(0xA0E25);
-                //gameMemoryValues._blackKnifeAssassin = PointerBossStatus.DerefByte(0x16AC1A);
-
-                //gameMemoryValues._bosses = PointerBossStatus.Deref<GamePlayer>(0x0);
-
-
-                //Console.WriteLine($"Name: {name}, Offset: {offset:X}");
-                //gameMemoryValues._bosses = PointerBossStatus.Deref<GamePlayer>(offset);
                 foreach (KeyValuePair<string, int> bossOffset in bossStatusOffsets)
                 {
                     gameMemoryValues.BossStatus[bossOffset.Key] = PointerBossStatus.DerefInt(bossOffset.Value);
                 }
 
                 gameMemoryValues._regionID = PointerRegionID.DerefInt(0xE4);
-                //Console.WriteLine(gameMemoryValues._boss.ToString());
-                //Console.WriteLine(gameMemoryValues._boss.ToString());
             }
             else
             {

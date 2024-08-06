@@ -17,20 +17,6 @@ namespace SRTPluginProviderED
         // GameInfo
         public string GameInfo { get => _gameInfo; set => _gameInfo = value; }
         internal string _gameInfo;
-        /*
-        public byte BellBearingHunter { get => _bellBearingHunter; set => _bellBearingHunter = value; }
-        internal byte _bellBearingHunter;
-
-        public byte BlackKnifeAssassin { get => _blackKnifeAssassin; set => _blackKnifeAssassin = value; }
-        internal byte _blackKnifeAssassin;
-
-        public byte AlabasterLord { get => _alabasterLord; set => _alabasterLord = value; }
-        internal byte _alabasterLord;
-        public byte BellBearing { get => _bellBearing; set => _bellBearing = value; }
-        internal byte _bellBearing;
-        public byte BloodHoundKnight { get => _bloodHoundKnight; set => _bloodHoundKnight = value; }
-        internal byte _bloodHoundKnight;
-        */
 
         public int RegionID { get => _regionID; set => _regionID = value; }
         internal int _regionID;
