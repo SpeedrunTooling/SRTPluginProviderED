@@ -93,7 +93,7 @@ namespace SRTPluginProviderED
             {
                 foreach (KeyValuePair<string, int> bossOffset in bossStatusOffsets)
                 {
-                    gameMemoryValues.BossStatus[bossOffset.Key] = PointerBossStatus.DerefInt(bossOffset.Value);
+                    gameMemoryValues.BossStatus[bossOffset.Key] = PointerBossStatus.DerefShort(bossOffset.Value);
                 }
 
                 gameMemoryValues._regionID = PointerRegionID.DerefInt(0xE4);

@@ -227,7 +227,7 @@ namespace SRTPluginProviderED.Structs.GameStructs
             {"Lamenter", 0x9F},
             {"Renalla Twin Moon Knight Boss", 0x47C},
             {"Red Bear", 0x2DD9},
-            {"Cerulean Coast", 0x15A18},
+            //{"Cerulean Coast", 0x15A18},
             {"Dancer of Ranah", 0x15A18},
             {"Ghostflame Dragon Ruins", 0x25431},
             {"Putrescent Knight", 0x8F},
@@ -259,6 +259,7 @@ namespace SRTPluginProviderED.Structs.GameStructs
             //{"Scaduview", 0x2DE1},
             {"Fallingstar Beast", 0x2DE1},
             {"Scadutree Avatar", 0x91},
+            {"Tree Sentinel Scadu", 0x2AC7B },
 
             //{"Rauh Base", 0x91},
             {"Romina, Saint of the Bud", 0x91},
