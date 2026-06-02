@@ -74,6 +74,11 @@ namespace SRTPluginProviderED
                 pointerAddressBossStatus = 0x03D68448;
                 pointerAddressRegionID = 0x3D691D8;
                 gameMemoryValues._gameInfo = "December 2025 Patch";
+            } else if (version == GameVersion.STEAM_May2026)
+            {
+                pointerAddressBossStatus = 0x03D68448;
+                pointerAddressRegionID = 0x3D691D8;
+                gameMemoryValues._gameInfo = "May 2026 Patch";
             }
             else
             {
