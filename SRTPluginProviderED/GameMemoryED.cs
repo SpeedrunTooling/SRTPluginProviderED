@@ -21,6 +21,9 @@ namespace SRTPluginProviderED
         public int RegionID { get => _regionID; set => _regionID = value; }
         internal int _regionID;
 
+        public int DeathCount { get => _deathCount; set => _deathCount = value; }
+        internal int _deathCount;
+
         public Dictionary<string, int> BossStatus { get => _bossStatus; set => _bossStatus = value; }
         internal Dictionary<string, int> _bossStatus = new Dictionary<string, int>();
 

@@ -20,11 +20,13 @@ namespace SRTPluginProviderED
         // Pointer Address Variables
         private int pointerAddressBossStatus;
         private int pointerAddressRegionID;
+        private int pointerAddressDeathCount;
 
         // Pointer Classes
         private IntPtr BaseAddress { get; set; }
         private MultilevelPointer PointerBossStatus { get; set; }
         private MultilevelPointer PointerRegionID { get; set; }
+        private MultilevelPointer PointerDeathCount { get; set; }
 
         /// <summary>
         /// 
@@ -54,6 +56,7 @@ namespace SRTPluginProviderED
                     gameMemoryValues._gameInfo = "Current Patch";
                     PointerBossStatus = new MultilevelPointer(memoryAccess, IntPtr.Add(BaseAddress, pointerAddressBossStatus), 0x28);
                     PointerRegionID = new MultilevelPointer(memoryAccess, IntPtr.Add(BaseAddress, pointerAddressRegionID));
+                    PointerDeathCount = new MultilevelPointer(memoryAccess, IntPtr.Add(BaseAddress, pointerAddressDeathCount));
                 }
                 else
                 {
@@ -68,16 +71,19 @@ namespace SRTPluginProviderED
             {
                 pointerAddressBossStatus = 0x03D68468;
                 pointerAddressRegionID = 0x03D691F8;
+                pointerAddressDeathCount = 0x03D5DF38;
                 gameMemoryValues._gameInfo = "July 2024 Patch";
             } else if (version == GameVersion.STEAM_December2025)
             {
                 pointerAddressBossStatus = 0x03D68448;
                 pointerAddressRegionID = 0x3D691D8;
+                pointerAddressDeathCount = 0x03D5DF38;
                 gameMemoryValues._gameInfo = "December 2025 Patch";
             } else if (version == GameVersion.STEAM_May2026)
             {
                 pointerAddressBossStatus = 0x03D68448;
                 pointerAddressRegionID = 0x3D691D8;
+                pointerAddressDeathCount = 0x03D5DF38;
                 gameMemoryValues._gameInfo = "May 2026 Patch";
             }
             else
@@ -107,6 +113,7 @@ namespace SRTPluginProviderED
                 }
 
                 gameMemoryValues._regionID = PointerRegionID.DerefInt(0xE4);
+                gameMemoryValues._deathCount = PointerDeathCount.DerefInt(0x94);
             }
             else
             {

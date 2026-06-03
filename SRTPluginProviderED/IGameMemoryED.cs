@@ -11,6 +11,7 @@ namespace SRTPluginProviderED
         string VersionInfo { get; }
         string GameInfo { get; }
         int RegionID { get; set; }
+        int DeathCount { get; set; }
 
         Dictionary<string, int> BossStatus { get; set; }
     }
