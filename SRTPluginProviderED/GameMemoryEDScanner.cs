@@ -51,17 +51,9 @@ namespace SRTPluginProviderED
             if (ProcessRunning)
             {
                 BaseAddress = NativeWrappers.GetProcessBaseAddress(pid, PInvoke.ListModules.LIST_MODULES_64BIT); // Bypass .NET's managed solution for getting this and attempt to get this info ourselves via PInvoke since some users are getting 299 PARTIAL COPY when they seemingly shouldn'
-                if (gv == GameVersion.STEAM_July2024)
-                {
-                    gameMemoryValues._gameInfo = "Current Patch";
-                    PointerBossStatus = new MultilevelPointer(memoryAccess, IntPtr.Add(BaseAddress, pointerAddressBossStatus), 0x28);
-                    PointerRegionID = new MultilevelPointer(memoryAccess, IntPtr.Add(BaseAddress, pointerAddressRegionID));
-                    PointerDeathCount = new MultilevelPointer(memoryAccess, IntPtr.Add(BaseAddress, pointerAddressDeathCount));
-                }
-                else
-                {
-                    gameMemoryValues._gameInfo = "Unknown Release May Not Work. Contact Developers";
-                }
+                PointerBossStatus = new MultilevelPointer(memoryAccess, IntPtr.Add(BaseAddress, pointerAddressBossStatus), 0x28);
+                PointerRegionID = new MultilevelPointer(memoryAccess, IntPtr.Add(BaseAddress, pointerAddressRegionID));
+                PointerDeathCount = new MultilevelPointer(memoryAccess, IntPtr.Add(BaseAddress, pointerAddressDeathCount));
             }
         }
 
@@ -85,6 +77,12 @@ namespace SRTPluginProviderED
                 pointerAddressRegionID = 0x3D691D8;
                 pointerAddressDeathCount = 0x03D5DF38;
                 gameMemoryValues._gameInfo = "May 2026 Patch";
+            } else if (version == GameVersion.STEAM_November2026)
+            {
+                pointerAddressBossStatus = 0x3D6F4D8;
+                pointerAddressRegionID = 0x03D70268;
+                pointerAddressDeathCount = 0x03D64FB8;
+                gameMemoryValues._gameInfo = "November 2026 Patch";
             }
             else
             {
@@ -105,20 +103,13 @@ namespace SRTPluginProviderED
 
         internal IGameMemoryED Refresh(GameVersion gv)
         {
-            if (gv == GameVersion.STEAM_July2024)
+            foreach (KeyValuePair<string, int> bossOffset in bossStatusOffsets)
             {
-                foreach (KeyValuePair<string, int> bossOffset in bossStatusOffsets)
-                {
-                    gameMemoryValues.BossStatus[bossOffset.Key] = PointerBossStatus.DerefShort(bossOffset.Value);
-                }
+                gameMemoryValues.BossStatus[bossOffset.Key] = PointerBossStatus.DerefShort(bossOffset.Value);
+            }
 
-                gameMemoryValues._regionID = PointerRegionID.DerefInt(0xE4);
-                gameMemoryValues._deathCount = PointerDeathCount.DerefInt(0x94);
-            }
-            else
-            {
-                Console.WriteLine("No Version was recognized");
-            }
+            gameMemoryValues._regionID = PointerRegionID.DerefInt(0xE4);
+            gameMemoryValues._deathCount = PointerDeathCount.DerefInt(0x94);
             HasScanned = true;
             return gameMemoryValues;
         }
